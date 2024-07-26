@@ -1,0 +1,544 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+	scroll-behavior: smooth !important;
+}
+
+body {
+	min-height: 100vh;
+	overflow-x: hidden;
+	background: #E8E8E8;
+	position: relative;
+}
+
+.main__form__container {
+	position: relative;
+	overflow-x: hidden !important;
+}
+
+.main__form__container .bg__image__top {
+	position: relative;
+	top: -40px;
+}
+
+.main__form__container .bg__image__top img {
+	width: 100%;
+}
+
+.back__button {
+	display: flex;
+	align-items: center;
+	color: #FFF;
+	position: absolute;
+	top: -61px;
+	left: -3px;
+	font-weight: 600;
+	filter: drop-shadow(2px 2px 4px black);
+}
+
+.back__button .arrow__left__icon {
+	font-size: 1.2em;
+	margin-right: 5px;
+}
+
+.form__container {
+	animation: fade 250ms ease-in-out forwards;
+}
+
+@keyframes slide {
+	0% {
+		transform: translateX(200%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(-50%);
+		opacity: 1;
+	}
+}
+
+@keyframes fade {
+	0% {
+		transform: translateX(-50%);
+	}
+
+	100% {
+		transform: translateX(-200%);
+	}
+}
+
+.form__container.active {
+	display: block;
+	animation: slide 250ms 125ms ease-in-out both;
+}
+
+.hide {
+	display: none;
+}
+
+.main__form__container .form__container {
+	background: #fff;
+	width: 85%;
+	position: relative;
+	top: -220px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 18px;
+	padding: 30px 70px;
+}
+
+.form__container .logo__container .main__title {
+	color: #035692;
+	font-size: 3em;
+	font-weight: 800;
+}
+
+.logo__container img {
+	width: 135px;
+}
+
+.form__container .logo__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer__web {
+	position: absolute;
+	bottom: 30px;
+	display: flex;
+	align-items: center;
+}
+
+.footer__web div:nth-child(1) {
+	margin-right: 10px;
+	font-weight: 500;
+}
+
+.footer__web div:nth-child(2) img {
+	width: 176px;
+	margin-right: 10px;
+}
+
+.footer__web div:nth-child(3) img {
+	width: 80px;
+}
+
+.company__policy div img {
+	width: 100%;
+}
+
+.form__container .container__button {
+	margin: 70px 0 90px;
+	display: flex;
+	justify-content: center;
+}
+
+.form__container .container__button .next__button {
+	text-decoration: none;
+	background: #BC0000;
+	color: #FFF;
+	transition: all .3s ease;
+	padding: 10px 104px;
+	border-radius: 10px;
+	margin-top: 16px;
+	transition: all .3s ease;
+	border: none;
+}
+
+.form__container .container__button .next__button:hover {
+	background: #921313;
+	cursor: pointer;
+}
+
+.form__container .logo__container {
+	margin-bottom: 50px;
+}
+
+.form__container .step__title {
+	color: #035692;
+	font-weight: 700;
+	margin-bottom: 1.5em;
+}
+
+.mobile__footer {
+	display: none;
+}
+
+.form-control, .form-select {
+	border: 2px solid #035692 !important;
+	border-radius: 10px !important;
+}
+
+.form-label {
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.calendar-container .calendar-icon {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #d3d3d3;
+	font-size: 25px;
+}
+
+.uploadImage[type=file]::file-selector-button {
+	background: #44679F;
+	border: 2px solid #44679F;
+	color: #fff;
+	padding: .1em 1em;
+	border-radius: 6px;
+	transition: all .3s ease;
+}
+
+.uploadImage {
+	padding-left: 15px !important;
+}
+
+input[type="file"]:hover::file-selector-button {
+	background: #045abf !important;
+	border: 2px solid #045abf;
+	color: #fff;
+}
+.photo__container .photo__background {
+    border: 2px solid #035692;
+    border-radius: 10px;
+    width: 400px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+.photo__container .photo__background #image-tag,
+.photo__container .photo__background #image-tag2 {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/3;
+    object-fit: cover;
+}
+.photo__container .photo__background .photo__camera__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+}
+.signature__container {
+    width: 85%;
+    margin: auto;
+    border-radius: 15px;
+}
+.signature__container .signature__card {
+    border: 2px solid #035692;
+    border-radius: 15px;
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px 40px 25px;
+}
+.signature__container .signature__card .signature__items button {
+    border: none;
+    padding: 10px;
+    background: #035692;
+    color: #FFF;
+    border-radius: 8px;
+}
+.accordion-button::after {
+	background-image: unset !important;
+}
+.accordion-button {
+    border: 2px solid #035692;
+    border-radius: 15px !important;
+    padding-left: 45px;
+}
+.accordion {
+	--bs-accordion-border-width: 0;
+}
+.privacy__policy .accordion-button:not(.collapsed) .class__arrow__icon {
+    transform: rotate(180deg);
+    top: 11px;
+}
+.privacy__policy .accordion-button:not(.collapsed) {
+	box-shadow: unset !important;
+}
+.privacy__policy .accordion-button:focus {
+	box-shadow: unset !important;
+}
+.privacy__policy .class__arrow__icon {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #035692;
+}
+.privacy__policy .privacy__policy__body {
+    margin: 5px 0 15px;
+    background: #E4F4FF;
+    border-radius: 10px;
+    padding: 1.75em 3.5em;
+    text-align: justify;
+}
+.accordion-button:focus {
+    border-color: #035692 !important;
+}
+.privacy__policy .privacy__policy__body, p, ol li, .form-check-label {
+    font-size: 14px;
+}
+.form-check-input[type=checkbox] {
+    border-radius: 0.25em !important;
+    border: 1px solid rgba(0,0,0,.25) !important;
+}
+#video-tag {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/3;
+    object-fit: fill;
+}
+.reset__button {
+	margin-top: 14px;
+	font-weight: 700;
+	cursor: pointer;
+}
+.signature__image__container {
+    width: 450px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: dashed #d3d3d3 0.16em;
+    border-radius: 10px;
+}
+.signature__image__container img {
+	width: 100%;
+	aspect-ratio: 8/5;
+	object-fit: contain;
+}
+.signature__modal {
+	border: 3px solid #035692;
+}
+.signature__modal .modal-header {
+    border-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.signature__modal .modal-footer {
+    border-top: 3px solid #035692;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+}
+.signature__modal .modal-footer .btn {
+    background: #035692;
+    padding: 0.375rem 2.5em;
+    color: #FFF;
+    font-weight: 500;
+}
+.signature__modal .signature__close__button {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 14px;
+    padding-right: 26px;
+    color: #035692;
+    font-weight: 700;
+}
+.signature__modal .signature__close__button .icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-55%);
+    font-size: 20px;
+    color: #035692;
+}
+.modal-body .signature-pad-container {
+	width: 100%;
+	height: 255px;
+}
+.modal-body .signature-pad-container canvas {
+	height: 100%;
+	width: 100%;
+	border: dashed .15em #d3d3d3;
+}
+input[type="number"] {
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.flatpickr-calendar {
+ 	left: 0;
+}
+.required-icon {
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1199px) {
+	.main__form__container .form__container {
+		top: -100px;
+	}
+}
+
+@media (max-width: 991px) {
+	.signature__container {
+		width: 100%;
+	}
+	.privacy__policy .privacy__policy__body {
+	    padding: 1.25em 1.5em;
+	    font-size: 14px;
+	} 
+	p, ol li {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 767px) {
+	.main__form__container .form__container {
+		width: 100%;
+		top: -30px;
+		padding: 30px 20px;
+		box-shadow: 0px 53px 0px 5px #fff;
+		border-radius: 30px 30px 0 0;
+	}
+
+	.logo__container img {
+		width: 70px;
+	}
+
+	.form__container .logo__container .main__title {
+		font-size: 1.55em;
+	}
+
+	.desktop__view {
+		display: none;
+	}
+
+	.mobile__footer {
+		display: block;
+		position: absolute;
+		bottom: 0;
+	}
+
+	.mobile__footer div:nth-child(1) {
+		font-weight: 500;
+		text-align: center;
+		margin-right: 5px;
+	}
+
+	.mobile__footer div:nth-child(2) {
+		display: flex;
+		align-items: center;
+	}
+
+	.mobile__footer .mobile__footer__logo div:nth-child(1) img {
+		width: 150px;
+	}
+
+	.mobile__footer .mobile__footer__logo div:nth-child(2) img {
+		width: 50px;
+	}
+
+	.form__container .container__button {
+		margin: 70px 0;
+	}
+
+	.mobile__footer .mobile__footer__logo div:nth-child(1) img {
+		width: 150px;
+	}
+
+	.mobile__footer .mobile__footer__logo div:nth-child(2) img {
+		width: 50px;
+	}
+
+	.form__container .container__button .next__button {
+		width: 100%;
+		text-align: center;
+		border-radius: 18px;
+		padding: 10px 0;
+	}
+
+	.back__button {
+		display: block;
+		position: relative;
+		color: #FFF;
+		top: -60px;
+		left: 0;
+		font-weight: 700;
+		display: flex;
+		align-items: center;
+	}
+
+	.back__button .arrow__left__icon {
+		font-size: 1.2em;
+		margin-right: 5px;
+	}
+	
+	.main__form__container .bg__image__top {
+		top: 0;
+	}
+}
+
+@media (max-width: 540px) {
+	.photo__container .photo__background {
+	    width: 280px;
+	    height: 280px;
+	}
+	.signature__container .signature__card {
+	    padding: 45px 15px 0;
+	}
+	/*.signature__container .signature__card p {
+		text-align: justify !important;
+	}*/
+	.accordion-button {
+	    padding-left: 35px;
+	    padding-right: 0;
+	    font-size: 13px;
+	}
+	.privacy__policy .class__arrow__icon {
+		font-size: 20px;
+	}
+	.signature__container .signature__card .signature__items button,
+	.privacy__policy .privacy__policy__body, p, ol li, .form-check-label {
+	    font-size: 13px;
+	}
+	.privacy__policy .accordion-button:not(.collapsed) .class__arrow__icon {
+	    top: 16px;
+	}
+	.signature__image__container {
+		width: 100%;
+	}
+	.uploadImage {
+		padding: 8px 5px 8px 15px !important;
+	}
+	#video-tag { 
+		object-fit: cover;
+	}
+	.photo__container .photo__background #image-tag,
+	.photo__container .photo__background #image-tag2 {
+	    height: auto;
+	    object-fit: fill;
+	}
+}

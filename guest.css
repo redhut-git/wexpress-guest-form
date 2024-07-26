@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+html,
+body {
+    scroll-behavior: smooth !important;
+}
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
+.main__container {
+	height: 100vh;
+	width: 100%;
+	position: relative;
+}
+.main__container .background__item__left {
+	width: 100%;
+	position: absolute;
+	left: -300px;
+}
+.background__item__left img {
+    width: 100%;
+    min-height: 100vh;
+    opacity: .1;
+    object-fit: cover;
+}
+.main__container .background__item__right {
+	position: absolute;
+	left: 150px;
+}
+.background__item__right img {
+    width: 100%;
+    min-height: 100vh;
+}
+.main__container .header__container {
+	position: absolute;
+	left: 70px;
+	top: 35px;
+}
+.header__container img {
+	width: 135px;
+}
+.header__container .content__container {
+    width: 40%;
+    margin-top: 50px;
+    padding-left: 22px;
+}
+.content__container .welcome__title {
+    color: #035692;
+    font-size: 1.75em;
+    font-weight: 800;
+}
+.content__container .main__title {
+	color: #035692;
+    font-size: 3em;
+    font-weight: 800;
+}
+.content__container .content__description {
+	margin-top: 50px;
+}
+.content__container .content__description p {
+	text-align: justify;
+	font-weight: 500;
+}
+.content__container .landing__page__button {
+	margin-top: 66px;
+}
+.landing__page__button .login__button {
+    text-decoration: none;
+    background: #BC0000;
+    color: #FFF;
+    transition: all .3s ease;
+    padding: 16px 24px;
+    border-radius: 16px;
+    margin-top: 16px;
+}
+.landing__page__button .login__button:hover {
+	background: #921313;
+}
+.main__container .footer__web {
+    position: absolute;
+    bottom: 50px;
+    left: 95px;
+    display: flex;
+    align-items: center;
+}
+.main__container .footer__web div:nth-child(1) {
+	margin-right: 10px;
+	font-weight: 500;
+}
+.main__container .footer__web div:nth-child(2) img {
+    width: 176px;
+    margin-right: 10px;
+}
+.main__container .footer__web div:nth-child(3) img {
+	width: 80px;
+}
+.mobile__view {
+	display: none;
+}
+.tablet__footer {
+	display: none;
+}
+.mobile__footer {
+	display: none;
+}
+
+
+
+
+
+@media(min-width: 1360px) and (max-width: 1400px) {
+	.header__container .content__container,
+	.content__container .content__description {
+		margin-top: 25px;
+	}
+	.content__container .landing__page__button {
+		margin-top: 40px;
+	}
+	.landing__page__button .login__button {
+	    padding: 10px 14px;
+	    border-radius: 10px;
+	    font-size: 14px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.main__container .header__container {
+		left: 20px;
+	}
+	.header__container .content__container {
+		width: 47%;
+	}
+	.main__container .footer__web {
+		left: 47px;
+	}
+}
+
+@media (max-width: 991px) {
+	.mobile__view {
+		display: block;
+	}
+	body {
+		overflow: auto !important;
+	}
+	.background__item__left, .background__item__right {
+		display: none;
+	}
+	.main__container .background__image__mobile {
+		position: absolute;
+		top: -85px;
+	}
+	.main__container .background__image__mobile img {
+		width: 100%;
+	}
+	.desktop__view {
+		display: none !important;
+	}
+	.mobile__main__background {
+		background: #FFF;
+		position: relative;
+		top: 250px;
+		border-radius: 50px 50px 0 0;
+		height: 900px;
+	}
+	.mobile__main__background .mobile__main__bg__image {
+        background-size: cover !important;
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		width: 100%;
+		position: relative;
+		border-radius: 50px 50px 0 0;
+		padding: 50px;
+		height: 100%;
+	}
+	.mobile__header__container .mobile__wex__logo {
+		display: flex;
+		justify-content: center;
+	}
+	.mobile__header__container .mobile__wex__logo img {
+		width: 135px;
+	}
+	.mobile__content__container .mobile__welcome__title {
+	    color: #035692;
+	    font-size: 1.75em;
+	    font-weight: 800;
+	    text-align: center;
+	}
+	.mobile__content__container .mobile__main__title {
+	    color: #035692;
+	    font-size: 3em;
+	    font-weight: 800;
+	    text-align: center;
+	}
+	.mobile__content__container .mobile__content__description p {
+	    text-align: justify;
+	    font-weight: 500;
+	    margin: 50px 0 66px;
+	}
+	.mobile__content__container {
+		margin-top: 35px;
+	}
+	.mobile__landing__page__button {
+	    position: absolute;
+	    bottom: 170px;
+	    left: 50%;
+	    transform: translateX(-50%);
+	}
+	.mobile__landing__page__button .mobile__login__button {
+	    text-decoration: none;
+	    background: #BC0000;
+	    color: #FFF;
+	    transition: all .3s ease;
+	    padding: 16px 24px;
+	    border-radius: 16px;
+	    margin-top: 16px;
+	}
+	.main__container .tablet__footer {
+	    position: absolute;
+	    bottom: 70px;
+	    display: flex;
+	    align-items: center;
+	}
+	.main__container .tablet__footer div:nth-child(1) {
+		margin-right: 10px;
+		font-weight: 500;
+	}
+	.main__container .tablet__footer div:nth-child(2) img {
+	    width: 176px;
+	    margin-right: 10px;
+	}
+	.main__container .tablet__footer div:nth-child(3) img {
+		width: 80px;
+	}
+	.mobile__landing__page__button .mobile__login__button:hover {
+		background: #921313;
+	}
+}
+
+@media (max-width: 540px) {
+	.mobile__header__container .mobile__wex__logo img {
+	    width: 110px;
+	}
+	.mobile__content__container {
+	    margin-top: 20px;
+	}
+	.main__container .background__image__mobile {
+	    top: -45px;
+	}
+	.mobile__main__background {
+	    top: 115px;
+	    border-radius: 30px 30px 0 0;
+	    height: 800px;
+	}
+	.mobile__main__background .mobile__main__bg__image {
+	    padding: 40px 20px;
+	}
+	.mobile__content__container .mobile__welcome__title {
+	    font-size: 1.55em;
+	}
+	.mobile__content__container .mobile__main__title {
+	    font-size: 2.35em;
+	}
+	.tablet__footer {
+		display: none !important;
+	}
+	.mobile__footer {
+		display: block;
+		position: absolute;
+	    bottom: 50px;
+	}
+	.main__container .mobile__footer div:nth-child(1) {
+		font-weight: 500;
+		text-align: center;
+		margin-right: 5px;
+	}
+	.main__container .mobile__footer div:nth-child(2) {
+	    display: flex;
+	    align-items: center;
+	}
+	.mobile__footer .mobile__footer__logo div:nth-child(1) img {
+		width: 150px;
+	}
+	.mobile__footer .mobile__footer__logo div:nth-child(2) img {
+		width: 50px;
+	}
+	.mobile__landing__page__button .mobile__login__button {
+	    display: inline-block;
+        padding: 8px 24px;
+    	border-radius: 10px;
+		width: 100%;
+	}
+	.mobile__landing__page__button {
+	    width: 90%;
+	    bottom: 140px;
+	}
+}
+
+@media (max-width: 320px) {
+	.mobile__content__container .mobile__main__title {
+	    font-size: 1.75em;
+	}
+	.mobile__content__container .mobile__welcome__title {
+	    font-size: 1.35em;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

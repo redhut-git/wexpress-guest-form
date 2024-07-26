@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <link href="guestForm.css" rel="stylesheet" type="text/css">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="guest/wex_logo.png'/>" /> -->
+    
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+	<script src="sweetalert2.min.all.js"></script>
+	
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://unpkg.com/webcam-easy@1.1.1/dist/webcam-easy.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <title>Guest Form</title>
+</head>
+<body>
+
+<!-- Main container -->
+<form id="form" action="index.html" commandName="guestForm" method="POST" enctype="multipart/form-data">
+	<div class="main__form__container" data-multi-step>
+		<div class="bg__image__top">
+			<img src="guest/bg_top.png">
+		</div>
+		<hidden id="stationCode" value="${stationCode}"/>
+		
+		<!-- Company policy -->
+		<div class="form__container" data-step>
+			<span class="back__button" role="button" onclick="javascript: window.location='index.html'">
+				<iconify-icon class="arrow__left__icon" icon="ph:arrow-left-bold"></iconify-icon>
+				Back
+			</span>
+			<div class="logo__container">
+				<img src="guest/wex_logo.png">
+				<h4 class="main__title mb-0">
+					WExpress
+				</h4>
+			</div>
+			
+			<div class="form__fields" id="tab1">
+				<h6 class="step__title">I. Company Policies and Rules</h6>
+				<div class="company__policy row">
+					<div class="col-md-6 col-xl-4 col-xxl-3 mb-md-3 mb-2">
+						<img src="guest/no_smoking.png">
+					</div>
+					<div class="col-md-6 col-xl-4 col-xxl-3 mb-md-3 mb-2">
+						<img src="guest/no_phones.png">
+					</div>
+					<div class="col-md-6 col-xl-4 col-xxl-3 mb-md-3 mb-2">
+						<img src="guest/personal_items.png">
+					</div>
+					<div class="col-md-6 col-xl-4 col-xxl-3 mb-md-3 mb-2">
+						<img src="guest/use_of_electronic.png">
+					</div>
+					
+					<div class="col-md-6 col-xl-4 col-xxl-3 mb-md-3 mb-2">
+						<img src="guest/no_taking_photos.png">
+					</div>
+					<div class="col-md-6 col-xl-4 col-xxl-3 mb-md-3 mb-2">
+						<img src="guest/access_restriction.png">
+					</div>
+					<div class="col-md-6 col-xl-4 col-xxl-3 mb-md-3 mb-2">
+						<img src="guest/escorting_policy.png">
+					</div>
+					<div class="col-md-6 col-xl-4 col-xxl-3 mb-md-3 mb-2">
+						<img src="guest/security_camera.png">
+					</div>
+				</div>
+			</div>
+			
+			<!-- Next Button -->
+			<div class="container__button">
+				<span class="next__button" data-next>Next</span>
+			</div>
+				
+			<!-- Footer section -->	
+			<div class="d-flex justify-content-center">
+				<!-- Desktop footer -->
+				<footer class="footer__web desktop__view">
+					<div>Powered by:</div>
+					<div>
+						<img src="guest/itrc_logo.png">
+					</div>
+					<div>
+						<img src="guest/iso.jpg">
+					</div>
+				</footer>
+				
+				<!-- Mobile footer -->
+				<footer class="mobile__footer">
+					<div>Powered by:</div>
+					<div class="mobile__footer__logo">
+						<div>
+							<img src="guest/itrc_logo.png">
+						</div>
+						<div>
+							<img src="guest/iso.jpg">
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		
+		
+		<!-- Basic information -->
+		<div class="form__container" data-step>
+			<span class="back__button" role="button" data-previous onclick="previousStep(2)">
+				<iconify-icon class="arrow__left__icon" icon="ph:arrow-left-bold"></iconify-icon>
+				Back
+			</span>
+			<div class="logo__container">
+				<img src="guest/wex_logo.png">
+				<h4 class="main__title mb-0">
+					WExpress
+				</h4>
+			</div>
+			
+			<div class="form__fields">
+				<h6 class="step__title">II. Basic Information</h6>
+				<div class="form__field__container row">
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">First Name:</label>
+	                    <input class="form-control validInputAlpha maxTextLength" id="fname" maxlength="45" autocomplete="off" required="required"/>
+					</div>
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+	                    <label for="" class="form-label">Middle Initial:</label>
+	                    <input class="form-control validInputAlpha" id="mi" maxlength="3" autocomplete="off"/>
+					</div>
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">Last Name:</label>
+	                    <input class="form-control validInputAlpha maxTextLength" id="lname" maxlength="45" autocomplete="off" required="required"/>
+					</div>
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">Contact Number:</label>
+	                    <input type="text" class="form-control" maxlength="25" id="contact" autocomplete="off" required="required"/>
+					</div>
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">Company/Department Name:</label>
+	                    <input class="form-control" id="company" maxlength="70" autocomplete="off" required="required"/>
+					</div>
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">Person to Visit:</label>
+	                    <input class="form-control" id="personToVisit" maxlength="70" autocomplete="off" required="required"/>
+					</div>
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">Purpose of Visit:</label>
+	                    <input class="form-control" id="purpose" maxlength="70" autocomplete="off" required="required"/>
+					</div>
+					<div class="col-7 col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">Date:</label>
+	                    <div class="calendar-container position-relative">
+	                        <input class="form-control minDate" id="dateAttended" type="text" placeholder="yyyy-mm-dd" maxlength="10" autocomplete="off" onkeypress="return checkDate(this,event)" required="required"/>
+	                        <iconify-icon class="calendar-icon" icon="ic:outline-date-range"></iconify-icon>
+	                    </div>
+					</div>
+					<div class="col-5 col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">Time:</label>
+	                    <input class="form-control" id="timeAttended" placeholder="--:--" autocomplete="off" onblur="validateTime(this)" maxlength="5" onkeyup="autoColon(this.value,this.id,event)" />
+					</div>
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">ID Type:</label>
+	                    <select class="form-select" id="idType" required="required">
+	                    	<option value="" selected>--Select an option--</option>
+	                    	<option value="Company ID">Company ID</option>
+	                    	<option value="Driver license">Driver license</option>
+	                    	<option value="Passport">Passport</option>
+	                    	<option value="Philippine passport">Philippine passport</option>
+	                    	<option value="Postal ID">Postal ID</option>
+	                    	<option value="Birth certificate">Birth certificate</option>
+	                    	<option value="ID card">ID card</option>
+	                    	<option value="OFW ID">OFW ID</option>
+	                    	<option value="Philippine national ID">Philippine national ID</option>
+	                    	<option value="Voter registration card">Voter registration card</option>
+	                    	<option value="Senior Citizen ID">Senior Citizen ID</option>
+	                    	<option value="Certificate of Citizenship">Certificate of Citizenship</option>
+	                    	<option value="Professional Regulation Commission ID">Professional Regulation Commission ID</option>
+	                    	<option value="Company IDs">Company IDs</option>
+	                    	<option value="Integrated Bar of the Philippines">Integrated Bar of the Philippines</option>
+	                    	<option value="Gsis Id Or Gsis Umid Card">Gsis Id Or Gsis Umid Card</option>
+	                    	<option value="PRC ID">PRC ID</option>
+	                    	<option value="SSS ID">SSS ID</option>
+	                    	<option value="PhilHealth ID">PhilHealth ID</option>
+	                    	<option value="Military ID card">Military ID card</option>
+	                    	<option value="TIN card">TIN card</option>
+	                    	<option value="Firearms license">Firearms license</option>
+	                    	<option value="NBI Clearance">NBI Clearance</option>
+	                    	<option value="Insurance card">Insurance card</option>
+	                    	<option value="Solo parent ID">Solo parent ID</option>
+	                    </select>
+					</div>
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">ID Front Picture:</label>
+	                    <input type="file" id="idFrontPic" class="form-control uploadImage" maxlength="70" autocomplete="off" accept="image/png,image/jpeg,image/jpg" required="required"/>
+					</div>
+					<div class="col-md-6 col-xl-4 mb-md-3 mb-2">
+						<b class="text-danger required-icon">*</b>
+	                    <label for="" class="form-label">ID Back Picture:</label>
+	                    <input type="file" id="idBackPic" class="form-control uploadImage" maxlength="70" autocomplete="off" accept="image/png,image/jpeg,image/jpg" required="required"/>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Next Button -->
+			<div class="container__button">
+				<span class="next__button" id="btn2" data-next>Next</span>
+			</div>
+				
+			<!-- Footer section -->	
+			<div class="d-flex justify-content-center">
+				<!-- Desktop footer -->
+				<footer class="footer__web desktop__view">
+					<div>Powered by:</div>
+					<div>
+						<img src="guest/itrc_logo.png">
+					</div>
+					<div>
+						<img src="guest/iso.jpg">
+					</div>
+				</footer>
+				
+				<!-- Mobile footer -->
+				<footer class="mobile__footer">
+					<div>Powered by:</div>
+					<div class="mobile__footer__logo">
+						<div>
+							<img src="guest/itrc_logo.png">
+						</div>
+						<div>
+							<img src="guest/iso.jpg">
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		
+		
+		<!-- Selfie Capture -->
+		<div class="form__container" data-step>
+			<span class="back__button" role="button" data-previous onclick="previousStep()">
+				<iconify-icon class="arrow__left__icon" icon="ph:arrow-left-bold"></iconify-icon>
+				Back
+			</span>
+			<div class="logo__container">
+				<img src="guest/wex_logo.png">
+				<h4 class="main__title mb-0">
+					WExpress
+				</h4>
+			</div>
+			
+			<div class="form__fields">
+				<h6 class="step__title">III. Selfie Capture</h6>
+				<div class="reminder__conntent">
+					<b class="text-danger">Reminder:</b>
+					<ol class="ps-3 mt-3 pb-4">
+						<li>Capture a clear and recognizable selfie.</li>
+						<li>Ensure proper lighting for better facial recognition.</li>
+						<li>Remove Sunglasses and caps to ensure accurate identification.</li>
+						<li>Double-check that your face is fully visible in the photo.</li>
+					</ol>
+				</div>
+				
+				<div class="photo__container d-flex justify-content-center align-items-center flex-column">
+					<div class="photo__background">
+						<iconify-icon class="photo__camera__icon" icon="mingcute:camera-line"></iconify-icon>
+						<video id="video-tag" autoplay="true" playsinline></video>
+						<canvas id="image-tag" hidden></canvas>
+						
+                    	<hidden id="profile"/>
+					</div>
+					<span class="text-danger reset__button" onclick="resetCamera()" hidden>Retake Picture</span>
+					<!-- <span class="text-primary reset__button" id="rotateCameraButton" onclick="rotateCamera()" hidden>
+						<iconify-icon class="fs-2" icon="mdi:rotate-3d-variant"></iconify-icon>
+					</span> -->
+				</div>
+			</div>
+			
+			<!-- Next Button -->
+			<div class="container__button">
+				<span class="next__button" id="start" onclick="start()">Take Photo</span>
+				<span class="next__button" id="captureImage" onclick="captureImage()" hidden>Capture</span>
+				<span class="next__button" id="nextButton" data-next hidden>Next</span>
+			</div>
+				
+			<!-- Footer section -->	
+			<div class="d-flex justify-content-center">
+				<!-- Desktop footer -->
+				<footer class="footer__web desktop__view">
+					<div>Powered by:</div>
+					<div>
+						<img src="guest/itrc_logo.png">
+					</div>
+					<div>
+						<img src="guest/iso.jpg">
+					</div>
+				</footer>
+				
+				<!-- Mobile footer -->
+				<footer class="mobile__footer">
+					<div>Powered by:</div>
+					<div class="mobile__footer__logo">
+						<div>
+							<img src="guest/itrc_logo.png">
+						</div>
+						<div>
+							<img src="guest/iso.jpg">
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		
+		
+		
+		<!-- Policy and Agreement -->
+		<div class="form__container" data-step>
+			<span class="back__button" role="button" data-previous onclick="previousStep(2)">
+				<iconify-icon class="arrow__left__icon" icon="ph:arrow-left-bold"></iconify-icon>
+				Back
+			</span>
+			<div class="logo__container">
+				<img src="guest/wex_logo.png">
+				<h4 class="main__title mb-0">
+					WExpress
+				</h4>
+			</div>
+			
+			<div class="form__fields">
+				<h6 class="step__title">IV. Policy and Agreement</h6>
+				
+				<div class="photo__container d-flex justify-content-center align-items-center">
+					<div class="photo__background">
+						<img id="image-tag2">
+					</div>
+				</div>
+				
+				<div class="signature__container mt-4">
+					<b class="text-danger required-icon">*</b>
+                    <label for="" class="form-label" style="color: #035692;">Signature:</label>
+                    <div class="signature__card">
+	                    <div class="signature__items text-center mb-3">
+	                    	<div class="signature__image__container" id="imageContainer" hidden>
+	                    		
+	                    	</div>
+	                    	<hidden id="signature" />
+	                    	<button type="button" data-bs-toggle="modal" data-bs-target="#drawSignature">
+	                    		Click here to draw
+	                    	</button>
+	                    </div>
+	                    <div class="signature__items">
+	                    	<p class="text-center">
+	                    		By providing my electronic signature, I acknowledge that it holds the same 
+	                    		validity as handwritten signatures, as permitted by local law.
+	                    	</p>
+	                    </div>
+                    </div>
+                    
+                    <div class="privacy__policy mt-4">
+                    	<div class="accordion accordion-flush" id="accordionPrivacyPolicy">
+						    <div class="accordion-item mb-2">
+						        <h2 class="accordion-header">
+						            <button class="accordion-button collapsed position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+						                <iconify-icon class="class__arrow__icon" icon="ic:sharp-arrow-drop-down-circle"></iconify-icon>
+						                Non-Disclosure Agreement (NDA)
+						            </button>
+						        </h2>
+						        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionPrivacyPolicy">
+						            <div class="accordion-body privacy__policy__body">
+						            	The Non-Disclosure Agreement (NDA) is established between the
+										Disclosing Party and the Receiving Party. The Disclosing
+										Party, sharing confidential information, and the Receiving
+										Party, gaining access to said information, acknowledge the
+										sensitive nature of the disclosed information and agree to
+										maintain its confidentiality. The Receiving Party commits not
+										to disclose, reproduce, or use the confidential information
+										for any purpose other than what is explicitly specified.
+										Exceptions to this agreement include information
+										independently developed by the Receiving Party, publicly
+										available information, or information obtained from a third
+										party without breaching confidentiality. Upon request or the
+										termination of the business relationship, the Receiving Party
+										is obligated to promptly return or destroy all copies of the
+										confidential information. Both parties have executed this
+										Non-Disclosure Agreement.
+									</div>
+						        </div>
+						    </div>
+						    <div class="accordion-item">
+						        <h2 class="accordion-header">
+						            <button class="accordion-button collapsed position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+						                <iconify-icon class="class__arrow__icon" icon="ic:sharp-arrow-drop-down-circle"></iconify-icon>
+						                Data Privacy Agreement
+						            </button>
+						        </h2>
+						        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionPrivacyPolicy">
+						            <div class="accordion-body privacy__policy__body">
+						            	The This Data Privacy Agreement establishes the terms for
+										processing personal data through the online form. Users, as
+										Data Controllers, acknowledge that their provided data will
+										be processed by the Data Processor. The agreement emphasizes
+										confidentiality, security measures, and the Data Processor's
+										commitment to assisting with data subject rights. It outlines
+										the duration of the agreement, conditions for sub-processing,
+										and governance by specific jurisdiction laws. Users'
+										continued use of the form implies their explicit consent to
+										these terms.
+									</div>
+						        </div>
+						    </div>
+						</div>            	
+                    </div>
+                    
+                    <div class="form-check mt-4">
+					    <input class="form-check-input" type="checkbox" name="isAgree" value="1" id="agreeCheckBox" required="required"/>
+					    <label class="form-check-label" for="agreeCheckBox">
+					    	<b class="text-danger">*</b>
+					        By entering iTRC.WEx-DC and by submitting this form, you acknowledge and agree to comply with these policies and rules.
+					    </label>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Next Button -->
+			<div class="container__button">
+				<button type="submit" class="next__button" id="save">Submit</button>
+			</div>
+				
+			<!-- Footer section -->	
+			<div class="d-flex justify-content-center">
+				<!-- Desktop footer -->
+				<footer class="footer__web desktop__view">
+					<div>Powered by:</div>
+					<div>
+						<img src="guest/itrc_logo.png">
+					</div>
+					<div>
+						<img src="guest/iso.jpg">
+					</div>
+				</footer>
+				
+				<!-- Mobile footer -->
+				<footer class="mobile__footer">
+					<div>Powered by:</div>
+					<div class="mobile__footer__logo">
+						<div>
+							<img src="guest/itrc_logo.png">
+						</div>
+						<div>
+							<img src="guest/iso.jpg">
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+	
+	</div>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="drawSignature" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="drawSignatureLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content signature__modal">
+            <div class="modal-header">
+                <button type="button" class="signature__close__button" data-bs-dismiss="modal" aria-label="Close">
+                	Close
+                	<iconify-icon class="icon" icon="jam:close-circle-f"></iconify-icon>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="signature-pad-container">
+				    <canvas id="signature_pad"></canvas>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn">Clear</button>
+                <button type="button" class="btn">Done</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="guest.js"></script>
+</body>
+</html>
